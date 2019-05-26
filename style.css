@@ -146,6 +146,10 @@ html {
       background-repeat: no-repeat;
       background-attachment: fixed;
       animation: none;
+      background-image:linear-gradient(
+        to right bottom, 
+        rgba(255,90,9, 0.5) , 
+        rgba(236,127,55, 0.5)) , url(img/food-1.jpg);
     }
   }
   .wrapper{
