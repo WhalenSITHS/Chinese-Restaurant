@@ -619,6 +619,7 @@ html {
     }
     .card_side--back{
       transform: rotateY(-180deg);
+      display: none;
     }
     .card_side--front{
       background-color:white;
