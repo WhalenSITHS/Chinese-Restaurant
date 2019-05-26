@@ -784,7 +784,7 @@ html {
       display: flex;
     }
     .gallery-image{
-      width: 20vw;
+      width: 90vw;
       transition: .3s;
     }
     .gallery-image-2{
@@ -806,5 +806,8 @@ html {
     .gallery-image-2:hover{
       transform: scale(1);
       
+    }
+    .gallery-image-off{
+      display: none;
     }
   }
