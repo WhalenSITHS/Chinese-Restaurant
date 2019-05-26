@@ -594,14 +594,14 @@ html {
     }
     .card_side{
       
-      height: 60vh;
+      height: 40vh;
       transition: 1s ease;
       color: black;
       font-size: 2rem;
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
+      width: 100vw;
       backface-visibility: hidden;
       border-radius: 4px;
       overflow: hidden;
@@ -784,7 +784,7 @@ html {
       display: flex;
     }
     .gallery-image{
-      width: 90vw;
+      width: 100vw;
       transition: .3s;
     }
     .gallery-image-2{
@@ -798,6 +798,7 @@ html {
       text-align: center;
       text-transform: uppercase;
       font-style: italic;
+      width: 100vw;
     }
     .gallery-image:hover{
       transform: scale(1);
