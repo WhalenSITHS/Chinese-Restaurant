@@ -1,6 +1,23 @@
 root{
     --color-font-beige:#C9C1AB;
-    ---color-text-box: #1E1D1B;
+    --color-text-box: #1E1D1B;
+    --color-dark-grey:#393939;
+    --color-deep-orange:#ff5a09;
+    --color-light-orange:#ec7f37;
+    --color-orange-yellow:#be4f0c;
+    /* rgb(255,90,9) */
+    /* rgb(236,127,55) */
+    
+/* 
+    font-family: 'Merriweather Sans', sans-serif;
+
+    font-family: 'Source Serif Pro', serif;
+
+    font-family: 'Cinzel', serif;
+
+    font-family: 'Satisfy', cursive; */
+
+
 }
 html {
     font-size: 62.5%;
@@ -28,4 +45,81 @@ html {
   
   *, *::after, ::before{
       box-sizing: border-box;
+  }
+  .header{
+    height: 95vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: changeBackground 10s ease-in infinite;
+  }
+
+  @keyframes changeBackground{
+    0%,100%{
+      background-image:linear-gradient(
+        to right bottom, 
+        rgba(255,90,9, 0.5) , 
+        rgba(236,127,55, 0.5)) , url(img/food-1.jpg);
+    }
+    20%{
+    }
+    30%{
+    }
+    33%{
+      background-image:linear-gradient(
+        to right bottom, 
+        rgba(255,90,9, 0.5) , 
+        rgba(236,127,55, 0.5)), url(img/food-2.jpg);
+    }
+    50%{
+      opacity: 50%;
+    }
+    60%{
+      opacity: 20%;
+    }
+    66%{
+      background-image:linear-gradient(
+        to right bottom, 
+        rgba(255,90,9, 0.5) , 
+        rgba(236,127,55, 0.5)) , url(img/food-3.jpg);
+    }
+    80%{
+      opacity: 50%;
+    }
+    90%{
+      opacity: 20%;
+    }
+  }
+  .text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-image: linear-gradient(
+      to right bottom, 
+      rgba(57,57,57, 0.5) , 
+        rgba(30,29,27, 0.5));
+  }
+  .header-primary {
+    color: white;
+    text-transform: uppercase;
+  }
+  .header-primary-main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 2.7rem;
+    font-family: 'Cinzel', serif;
+  }
+  .header-primary-sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.3rem;
+    font-family: 'Cinzel', serif;
+    font-style: italic;
+  }
+  .wrapper{
+    max-width: 100vw;
   }
