@@ -424,9 +424,17 @@ html {
   }
   .menu-splash-image{
     width: 100%;
+    transition: .3s;
   }
+  .menu-splash-image:hover{
+    transform: scale(1.3) translateX(10%)
+;  }
   .menu-image{
     width: 100%;
+    transition: .3s;
+  }
+  .menu-image:hover{
+    transform: scale(1.8);
   }
   .food-gallery{
     display: flex;
@@ -443,9 +451,11 @@ html {
   }
   .gallery-image{
     width: 33.333%;
+    transition: .3s;
   }
   .gallery-image-2{
     width: 50%;
+    transition: .3s;
   }
   .menu-header{
     font-size: 4rem;
@@ -453,5 +463,13 @@ html {
     font-family: 'Cinzel', serif;
     text-align: center;
     text-transform: uppercase;
+    font-style: italic;
   }
-  
+  .gallery-image:hover{
+    transform: scale(1.3);
+    
+  }
+  .gallery-image-2:hover{
+    transform: scale(1.1);
+    
+  }
