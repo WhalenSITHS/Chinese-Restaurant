@@ -140,6 +140,27 @@
 	transform: rotate(-135deg);
 	top: 0;
 }
+@media screen and (max-width: 600px){
+  .navigation_checkbox:checked~.navigation_background{
+    /* transform: scale(80); */
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    border-radius: unset;
+}
+
+.navigation_checkbox:checked~.navigation_nav{
+	opacity: 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.navigation_icon{
+	position: relative;
+	margin-top: 3.5rem;
+}
+}
 
 .btn, .btn:link, .btn:visited {
     text-transform: uppercase;
