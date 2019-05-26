@@ -51,6 +51,7 @@ html {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     animation: changeBackground 10s ease-in infinite;
   }
 
@@ -122,4 +123,276 @@ html {
   }
   .wrapper{
     max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .about{
+    height: 70vh;
+    width: 95vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10rem auto;
+  }
+  .flex-col-1-of-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    width: 45vw;
+    
+  }
+  .about-text-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+  }
+  .about-header{
+    font-size: 3rem;
+    font-family: 'Cinzel', serif;
+    font-style: italic;
+  }
+  .about-text-content{
+    font-size: 2rem;
+
+  }
+  .about-image-box{
+    position: relative;
+  }
+  .about-gallery-images{
+    position: absolute;
+    height: 30vh;
+    box-shadow: 0 1.5rem 4rem rgba(0,0,0,.4);
+    outline-offset: 1rem;
+    transition: .2s
+  }
+  .about-image-1{
+    top: 5rem;
+    left:30%;
+  }
+  .about-image-2{
+    top: -10rem;
+    right:15%;
+  }
+  .about-image-3{
+    top: 10rem;
+    right:15%;
+  }
+  .about-image-4{
+    top: -15rem;
+    left:15%;
+  }
+
+  .about-gallery-images:hover{
+    transform: scale(1.5) translateY(-.5rem);
+    z-index: 10;
+    box-shadow: 0 2.5rem 4rem rgba(0,0,0,.6);
+    outline: 1.5rem solid rgba(255,90,9, 0.5);
+  }
+   .about-image-box:hover .about-gallery-images:not(:hover){
+    transform: scale(.9);
+    opacity: 0.3;
+  } 
+ 
+  .locations{
+    height: 95vh;
+    background-image: linear-gradient(
+      to right bottom, 
+      rgba(255,90,9, 0.5) , 
+      rgba(255,90,9, 0.5)) , url(img/person-1.jpg);
+      background-size:cover;
+      background-position: center; 
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: 15rem 0;
+      width: 100%;
+  }
+  .header-locations{
+    font-size: 5rem;
+    color: white;
+    font-family: 'Cinzel', serif;
+    font-style: italic;
+  }
+  .location-row{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+  }
+  .location{
+    
+  }
+  .location-image{
+    width: 22vw;
+    border-radius: 5%;
+    transition: .3s;
+  }
+  .location:hover .location-image{
+    transform: translateY(1rem) scale(1.1);
+    border-radius: 0;
+  }
+  .location:hover .location-text{
+    transform: translateY(-2rem) scale(1.1);
+    font-size: 3rem;
+    background-color: rgba(255,90,9, 1);
+    color: white;
+  }
+  .location-text{
+    background-color: white;
+    font-size: 2rem;
+    font-family: 'Cinzel', serif;
+    font-style: italic;
+    
+    text-align: center; 
+    font-weight: 600;
+    transition: .3s;
+  }
+
+  .food{
+    height: 70vh;
+    margin: 10rem auto;
+    text-align: center;
+  }
+  .header-food{
+    font-size: 5rem;
+    color: rgba(255,90,9, .7);
+    font-family: 'Cinzel', serif;
+    font-style: italic;
+  }
+  .food-row{
+    display: flex;
+    width: 95vw;
+    justify-content: space-around;
+  }
+  .col-1-of-3{
+    width: 30vw;
+  }
+  .card{
+    height: 60vh;
+    width: 30vw;
+    perspective: 150rem; /*Gives 3d feel to object */
+    -moz-perspective:150rem;
+    
+  }
+  .card_picture_video{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    z-index: 1;
+    position: relative;
+  }
+  .overlay{
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #ec7f37;
+    opacity: 0.5;
+  }
+  .overlay-2{
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #ec7f37;
+    opacity: 0.5;
+  }
+  .overlay-3{
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: #ec7f37;
+    opacity: 0.5;
+  }
+  .card-video{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .card_side{
+    
+    height: 60vh;
+    transition: 1s ease;
+    color: black;
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0,0,0,.15);
+  }
+  .card:hover .card_side--front{
+    transform: rotateY(-180deg);
+  }
+  .card:hover .card_side--back{
+    transform: rotateY(0deg);
+  }
+  .card_side--back{
+    transform: rotateY(-180deg);
+  }
+  .card_side--front{
+    background-color:white;
+    color: rgb(255,90,9);
+    font-size: 3rem;
+    font-family: 'Cinzel', serif;
+  }
+  .card_side--front--1{
+    ;
+  }
+  .card_side--front--2{
+   ;
+  }
+  .card_side--front--3{
+    ;
+  }
+  .card_side--back--1{
+
+  }
+  .card_side--back--2{
+   
+  }
+  .card_side--back--3{
+    
+  }
+  .card_cta{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+  .card_price-box{
+    text-align: center;
+    margin-bottom: 8rem;
+    color: #393939;
+  }
+  .card_price-only{
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    color: rgb(255,90,9);
+    font-family: 'Cinzel', serif;
+  }
+  .card_price-value{
+    font-size: 6rem;
+    font-weight: 100;
   }
