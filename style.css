@@ -46,6 +46,36 @@ html {
   *, *::after, ::before{
       box-sizing: border-box;
   }
+
+  .loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #ec7f37;
+    z-index: 900000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .loader-header{
+    font-size: 10rem;
+
+  }
+  .loader.hidden {
+    animation: fadeOut 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+  .loader-img{
+
+  }
   .header{
     height: 95vh;
     background-size: cover;
