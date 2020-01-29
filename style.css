@@ -1,14 +1,14 @@
-root{
-    --color-font-beige:#C9C1AB;
-    --color-text-box: #1E1D1B;
-    --color-dark-grey:#393939;
-    --color-deep-orange:#ff5a09;
-    --color-light-orange:#ec7f37;
-    --color-orange-yellow:#be4f0c;
-    /* rgb(255,90,9) */
-    /* rgb(236,127,55) */
-    
-/* 
+root {
+  --color-font-beige: #c9c1ab;
+  --color-text-box: #1e1d1b;
+  --color-dark-grey: #393939;
+  --color-deep-orange: #ff5a09;
+  --color-light-orange: #ec7f37;
+  --color-orange-yellow: #be4f0c;
+  /* rgb(255,90,9) */
+  /* rgb(236,127,55) */
+
+  /* 
     font-family: 'Merriweather Sans', sans-serif;
 
     font-family: 'Source Serif Pro', serif;
@@ -16,461 +16,595 @@ root{
     font-family: 'Cinzel', serif;
 
     font-family: 'Satisfy', cursive; */
-
-
 }
 html {
-    font-size: 62.5%;
-    
+  font-size: 62.5%;
+}
+@media screen and (max-width: 1300px) {
+  html {
+    font-size: 60%;
   }
-  @media screen and (max-width: 1300px){
-    html{
-      font-size: 60%;
-    }
+}
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 55%;
   }
-  @media screen and (max-width: 900px){
-    html{
-      font-size: 55%;
-    }
+}
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 45%;
   }
-  @media screen and (max-width: 600px){
-    html{
-      font-size: 45%;
-    }
-    body{
-      max-width: 100vw;
-    }
-    
+  body {
+    max-width: 100vw;
   }
-  
-  *, *::after, ::before{
-      box-sizing: border-box;
-  }
+}
 
-  .loader{
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: #ec7f37;
-    z-index: 900000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  .loader-header{
-    font-size: 10rem;
+*,
+*::after,
+::before {
+  box-sizing: border-box;
+}
 
-  }
-  .loader.hidden {
-    animation: fadeOut 1s;
-    animation-fill-mode: forwards;
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ec7f37;
+  z-index: 900000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.loader-header {
+  font-size: 10rem;
+}
+.loader.hidden {
+  animation: fadeOut 1s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fadeOut {
-    100% {
-        opacity: 0;
-        visibility: hidden;
-    }
-}
-  .loader-img{
-
+  100% {
+    opacity: 0;
+    visibility: hidden;
   }
-  .header{
+}
+.loader-img {
+}
+.header {
+  height: 95vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  animation: changeBackground 10s ease-in infinite;
+}
+@media screen and (max-width: 800px) {
+  .header {
+    animation: none;
+    background-image: url("img/food-1.jpg");
+  }
+}
+
+@keyframes changeBackground {
+  0%,
+  100% {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(255, 90, 9, 0.5),
+        rgba(236, 127, 55, 0.5)
+      ),
+      url(img/food-1.jpg);
+  }
+  20% {
+  }
+  30% {
+  }
+  33% {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(255, 90, 9, 0.5),
+        rgba(236, 127, 55, 0.5)
+      ),
+      url(img/food-2.jpg);
+  }
+  50% {
+    opacity: 50%;
+  }
+  60% {
+    opacity: 20%;
+  }
+  66% {
+    background-image: linear-gradient(
+        to right bottom,
+        rgba(255, 90, 9, 0.5),
+        rgba(236, 127, 55, 0.5)
+      ),
+      url(img/food-3.jpg);
+  }
+  80% {
+    opacity: 50%;
+  }
+  90% {
+    opacity: 20%;
+  }
+}
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(57, 57, 57, 0.5),
+    rgba(30, 29, 27, 0.5)
+  );
+}
+.header-primary {
+  color: white;
+  text-transform: uppercase;
+}
+.header-primary-main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 2.7rem;
+  font-family: "Cinzel", serif;
+}
+.header-primary-sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.3rem;
+  font-family: "Cinzel", serif;
+  font-style: italic;
+}
+@media screen and (max-width: 600px) {
+  .header-primary-main {
+    display: block;
+    font-size: 4.5rem;
+    font-weight: 400;
+    letter-spacing: 2rem;
+    font-family: "Cinzel", serif;
+  }
+  .header-primary-sub {
+    display: block;
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 1rem;
+    font-family: "Cinzel", serif;
+    font-style: italic;
+  }
+  .header {
     height: 95vh;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    animation: changeBackground 10s ease-in infinite;
-  }
-
-  @keyframes changeBackground{
-    0%,100%{
-      background-image:linear-gradient(
-        to right bottom, 
-        rgba(255,90,9, 0.5) , 
-        rgba(236,127,55, 0.5)) , url(img/food-1.jpg);
-    }
-    20%{
-    }
-    30%{
-    }
-    33%{
-      background-image:linear-gradient(
-        to right bottom, 
-        rgba(255,90,9, 0.5) , 
-        rgba(236,127,55, 0.5)), url(img/food-2.jpg);
-    }
-    50%{
-      opacity: 50%;
-    }
-    60%{
-      opacity: 20%;
-    }
-    66%{
-      background-image:linear-gradient(
-        to right bottom, 
-        rgba(255,90,9, 0.5) , 
-        rgba(236,127,55, 0.5)) , url(img/food-3.jpg);
-    }
-    80%{
-      opacity: 50%;
-    }
-    90%{
-      opacity: 20%;
-    }
-  }
-  .text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+    animation: none;
     background-image: linear-gradient(
-      to right bottom, 
-      rgba(57,57,57, 0.5) , 
-        rgba(30,29,27, 0.5));
+        to right bottom,
+        rgba(255, 90, 9, 0.5),
+        rgba(236, 127, 55, 0.5)
+      ),
+      url(img/food-1.jpg);
   }
-  .header-primary {
-    color: white;
-    text-transform: uppercase;
-  }
-  .header-primary-main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 2.7rem;
-    font-family: 'Cinzel', serif;
-  }
-  .header-primary-sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.3rem;
-    font-family: 'Cinzel', serif;
-    font-style: italic;
-  }
-  @media screen and (max-width: 600px){
-    
-   
-    .header-primary-main {
-      display: block;
-      font-size: 4.5rem;
-      font-weight: 400;
-      letter-spacing: 2rem;
-      font-family: 'Cinzel', serif;
-    }
-    .header-primary-sub {
-      display: block;
-      font-size: 1.7rem;
-      font-weight: 700;
-      letter-spacing: 1rem;
-      font-family: 'Cinzel', serif;
-      font-style: italic;
-    }
-    .header{
-      height: 95vh;
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      animation: none;
-      background-image:linear-gradient(
-        to right bottom, 
-        rgba(255,90,9, 0.5) , 
-        rgba(236,127,55, 0.5)) , url(img/food-1.jpg);
-    }
-  }
-  .wrapper{
-    max-width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+}
+.wrapper {
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.about {
+  height: 70vh;
+  width: 95vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10rem auto;
+}
+.flex-col-1-of-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  width: 45vw;
+}
+.about-text-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+.about-header {
+  font-size: 3rem;
+  font-family: "Cinzel", serif;
+  font-style: italic;
+}
+.about-text-content {
+  font-size: 2rem;
+}
+.about-image-box {
+  position: relative;
+}
+.about-gallery-images {
+  position: absolute;
+  height: 30vh;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+  outline-offset: 1rem;
+  transition: 0.2s;
+}
+.about-image-1 {
+  top: 5rem;
+  left: 30%;
+}
+.about-image-2 {
+  top: -10rem;
+  right: 15%;
+}
+.about-image-3 {
+  top: 10rem;
+  right: 15%;
+}
+.about-image-4 {
+  top: -15rem;
+  left: 15%;
+}
 
-  }
-  .about{
-    height: 70vh;
+.about-gallery-images:hover {
+  transform: scale(1.5) translateY(-0.5rem);
+  z-index: 10;
+  box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.6);
+  outline: 1.5rem solid rgba(255, 90, 9, 0.5);
+}
+.about-image-box:hover .about-gallery-images:not(:hover) {
+  transform: scale(0.9);
+  opacity: 0.3;
+}
+@media screen and (max-width: 600px) {
+  .about {
+    height: 90vh;
     width: 95vw;
     display: flex;
+    flex-direction: column;
+    flex: 1 0 auto;
     justify-content: space-between;
     align-items: center;
     margin: 10rem auto;
   }
-  .flex-col-1-of-2{
+  .flex-col-1-of-2 {
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
-    width: 45vw;
-    
+    width: 100vw;
   }
-  .about-text-box{
+  .about-text-box {
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
     text-align: center;
   }
-  .about-header{
+  .about-header {
     font-size: 3rem;
-    font-family: 'Cinzel', serif;
+    font-family: "Cinzel", serif;
     font-style: italic;
   }
-  .about-text-content{
+  .about-text-content {
     font-size: 2rem;
-
   }
-  .about-image-box{
+  .about-image-box {
     position: relative;
   }
-  .about-gallery-images{
-    position: absolute;
-    height: 30vh;
-    box-shadow: 0 1.5rem 4rem rgba(0,0,0,.4);
+  .about-gallery-images {
+    position: relative;
+    height: 40vh;
+    max-width: 90vw;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
     outline-offset: 1rem;
-    transition: .2s
+    transition: 0.2s;
   }
-  .about-image-1{
-    top: 5rem;
-    left:30%;
+  .about-image-1 {
+    top: 0;
+    left: 0;
   }
-  .about-image-2{
-    top: -10rem;
-    right:15%;
+  .about-image-2 {
+    display: none;
   }
-  .about-image-3{
-    top: 10rem;
-    right:15%;
+  .about-image-3 {
+    display: none;
   }
-  .about-image-4{
-    top: -15rem;
-    left:15%;
+  .about-image-4 {
+    display: none;
   }
-
-  .about-gallery-images:hover{
-    transform: scale(1.5) translateY(-.5rem);
+  .about-gallery-images:hover {
+    transform: scale(1) translateY(0);
     z-index: 10;
-    box-shadow: 0 2.5rem 4rem rgba(0,0,0,.6);
-    outline: 1.5rem solid rgba(255,90,9, 0.5);
+    box-shadow: unset;
+    outline: unset;
   }
-   .about-image-box:hover .about-gallery-images:not(:hover){
-    transform: scale(.9);
-    opacity: 0.3;
-  } 
-  @media screen and (max-width: 600px){
-    .about{
-      height: 90vh;
-      width: 95vw;
-      display: flex;
-      flex-direction: column;
-      flex: 1 0 auto;
-      justify-content: space-between;
-      align-items: center;
-      margin: 10rem auto;
-    }
-    .flex-col-1-of-2{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      align-content: center;
-      width: 100vw;
-      
-    }
-    .about-text-box{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      align-content: center;
-      text-align: center;
-    }
-    .about-header{
-      font-size: 3rem;
-      font-family: 'Cinzel', serif;
-      font-style: italic;
-    }
-    .about-text-content{
-      font-size: 2rem;
-  
-    }
-    .about-image-box{
-      position: relative;
-    }
-    .about-gallery-images{
-      position: relative;
-      height: 40vh;
-      max-width: 90vw;
-      box-shadow: 0 1.5rem 4rem rgba(0,0,0,.4);
-      outline-offset: 1rem;
-      transition: .2s
-    }
-    .about-image-1{
-      top: 0;
-      left:0;
-    }
-    .about-image-2{
-     display: none;
-    }
-    .about-image-3{
-      display: none;
-    }
-    .about-image-4{
-     display: none;
-    }
-    .about-gallery-images:hover{
-      transform: scale(1) translateY(0);
-      z-index: 10;
-      box-shadow: unset;
-      outline:unset;
-    }
-     .about-image-box:hover .about-gallery-images:not(:hover){
-      transform: scale(1);
-      opacity: 1;
-    } 
-    
+  .about-image-box:hover .about-gallery-images:not(:hover) {
+    transform: scale(1);
+    opacity: 1;
   }
-  .locations{
-    height: 95vh;
+}
+.locations {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(255, 90, 9, 0.5),
+      rgba(255, 90, 9, 0.5)
+    ),
+    url(img/person-1.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 15rem 0;
+  width: 100%;
+}
+.header-locations {
+  font-size: 5rem;
+  color: white;
+  font-family: "Cinzel", serif;
+  font-style: italic;
+}
+.location-row {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+.location {
+}
+.location-image {
+  width: 22vw;
+  border-radius: 5%;
+  transition: 0.3s;
+}
+.location:hover .location-image {
+  transform: translateY(1rem) scale(1.1);
+  border-radius: 0;
+}
+.location:hover .location-text {
+  transform: translateY(-2rem) scale(1.1);
+  font-size: 3rem;
+  background-color: rgba(255, 90, 9, 1);
+  color: white;
+}
+.location-text {
+  background-color: white;
+  font-size: 2rem;
+  font-family: "Cinzel", serif;
+  font-style: italic;
+
+  text-align: center;
+  font-weight: 600;
+  transition: 0.3s;
+}
+@media screen and (max-width: 600px) {
+  .locations {
+    height: 150vh;
     background-image: linear-gradient(
-      to right bottom, 
-      rgba(255,90,9, 0.5) , 
-      rgba(255,90,9, 0.5)) , url(img/person-1.jpg);
-      background-size:cover;
-      background-position: center; 
-      background-attachment: fixed;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      padding: 15rem 0;
-      width: 100%;
+        to right bottom,
+        rgba(255, 90, 9, 0.5),
+        rgba(255, 90, 9, 0.5)
+      ),
+      url(img/person-1.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 15rem 0;
+    width: 100%;
   }
-  .header-locations{
+  .header-locations {
     font-size: 5rem;
     color: white;
-    font-family: 'Cinzel', serif;
+    font-family: "Cinzel", serif;
     font-style: italic;
   }
-  .location-row{
+  .location-row {
     display: flex;
     justify-content: space-around;
-    width: 100%;
+    flex-direction: column;
+    width: 100vw;
     height: 100%;
   }
-  .location{
-    
+
+  .location-image {
+    height: 25vh;
+    border-radius: 0;
+    width: auto;
+    transition: 0.3s;
   }
-  .location-image{
-    width: 22vw;
-    border-radius: 5%;
-    transition: .3s;
-  }
-  .location:hover .location-image{
-    transform: translateY(1rem) scale(1.1);
+  .location:hover .location-image {
+    transform: translateY(0rem) scale(1);
     border-radius: 0;
   }
-  .location:hover .location-text{
-    transform: translateY(-2rem) scale(1.1);
-    font-size: 3rem;
-    background-color: rgba(255,90,9, 1);
-    color: white;
-  }
-  .location-text{
-    background-color: white;
+  .location:hover .location-text {
+    transform: translateY(0rem) scale(1);
     font-size: 2rem;
-    font-family: 'Cinzel', serif;
-    font-style: italic;
-    
-    text-align: center; 
-    font-weight: 600;
-    transition: .3s;
+    background-color: white;
+    color: black;
   }
-  @media screen and (max-width:600px){
-    .locations{
-      height: 150vh;
-      background-image: linear-gradient(
-        to right bottom, 
-        rgba(255,90,9, 0.5) , 
-        rgba(255,90,9, 0.5)) , url(img/person-1.jpg);
-        background-size:cover;
-        background-position: center; 
-        background-attachment: fixed;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        padding: 15rem 0;
-        width: 100%;
-    }
-    .header-locations{
-      font-size: 5rem;
-      color: white;
-      font-family: 'Cinzel', serif;
-      font-style: italic;
-    }
-    .location-row{
-      display: flex;
-      justify-content: space-around;
-      flex-direction: column;
-      width: 100vw;
-      height: 100%;
-    }
-    
-    .location-image{
-      height: 25vh;
-      border-radius: 0;
-      width: auto;
-      transition: .3s;
-    }
-    .location:hover .location-image{
-      transform: translateY(0rem) scale(1);
-      border-radius: 0;
-    }
-    .location:hover .location-text{
-      transform: translateY(0rem) scale(1);
-      font-size: 2rem;
-      background-color: white;
-      color:black;
-    }
-    
-    }
-  
+}
 
-  .food{
-    height: 70vh;
+.food {
+  height: 70vh;
+  margin: 10rem auto;
+  text-align: center;
+}
+.header-food {
+  font-size: 5rem;
+  color: rgba(255, 90, 9, 0.7);
+  font-family: "Cinzel", serif;
+  font-style: italic;
+}
+.food-row {
+  display: flex;
+  width: 95vw;
+  justify-content: space-around;
+}
+.col-1-of-3 {
+  width: 30vw;
+}
+.card {
+  height: 60vh;
+  width: 30vw;
+  perspective: 150rem; /*Gives 3d feel to object */
+  -moz-perspective: 150rem;
+}
+.card_picture_video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  z-index: 0;
+  position: relative;
+}
+.overlay {
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #ec7f37;
+  opacity: 0.5;
+}
+.overlay-2 {
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #ec7f37;
+  opacity: 0.5;
+}
+.overlay-3 {
+  z-index: 2;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: #ec7f37;
+  opacity: 0.5;
+}
+.card-video {
+  width: 30vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#card-video {
+  width: 30vw;
+}
+.card_side {
+  height: 60vh;
+  transition: 1s ease;
+  color: black;
+  font-size: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+}
+.card:hover .card_side--front {
+  transform: rotateY(180deg);
+}
+.card:hover .card_side--back {
+  transform: rotateY(0deg);
+}
+.card_side--back {
+  transform: rotateY(-180deg);
+  background-color: white;
+}
+.card_side--front {
+  background-color: white;
+  color: rgb(255, 90, 9);
+  font-size: 3rem;
+  font-family: "Cinzel", serif;
+}
+
+.card_cta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  text-align: center;
+}
+.card_price-box {
+  text-align: center;
+  margin-bottom: 8rem;
+  color: #393939;
+}
+.card_price-only {
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  color: rgb(255, 90, 9);
+  font-family: "Cinzel", serif;
+}
+.card_price-value {
+  font-size: 6rem;
+  font-weight: 100;
+}
+@media screen and (max-width: 600px) {
+  .food {
+    height: 150vh;
     margin: 10rem auto;
     text-align: center;
   }
-  .header-food{
-    font-size: 5rem;
-    color: rgba(255,90,9, .7);
-    font-family: 'Cinzel', serif;
+  .header-food {
+    font-size: 4rem;
+    color: rgba(255, 90, 9, 0.7);
+    font-family: "Cinzel", serif;
     font-style: italic;
   }
-  .food-row{
+  .food-row {
     display: flex;
-    width: 95vw;
+    width: 100vw;
+    flex-direction: column;
+    height: 130vh;
     justify-content: space-around;
   }
-  .col-1-of-3{
-    width: 30vw;
+  .col-1-of-3 {
+    width: 100vw;
+    height: 40vh;
   }
-  .card{
-    height: 60vh;
-    width: 30vw;
+  .card {
+    height: 40vh;
+    width: 100vw;
     perspective: 150rem; /*Gives 3d feel to object */
-    -moz-perspective:150rem;
-    
+    -moz-perspective: 150rem;
   }
-  .card_picture_video{
+  .card_picture_video {
     display: flex;
     justify-content: center;
     align-items: center;
     opacity: 1;
-    z-index: 0;
+    z-index: 1;
     position: relative;
   }
-  .overlay{
+  .overlay {
     z-index: 2;
     height: 100%;
     width: 100%;
@@ -480,7 +614,7 @@ html {
     background-color: #ec7f37;
     opacity: 0.5;
   }
-  .overlay-2{
+  .overlay-2 {
     z-index: 2;
     height: 100%;
     width: 100%;
@@ -490,7 +624,7 @@ html {
     background-color: #ec7f37;
     opacity: 0.5;
   }
-  .overlay-3{
+  .overlay-3 {
     z-index: 2;
     height: 100%;
     width: 100%;
@@ -500,48 +634,44 @@ html {
     background-color: #ec7f37;
     opacity: 0.5;
   }
-  .card-video{
-    width: 30vw;
+  .card-video {
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
   }
-  #card-video{
-    width: 30vw;
-  }
-  .card_side{
-    
-    height: 60vh;
+  .card_side {
+    height: 40vh;
     transition: 1s ease;
     color: black;
     font-size: 2rem;
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     backface-visibility: hidden;
     border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 1.5rem 4rem rgba(0,0,0,.15);
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   }
-  .card:hover .card_side--front{
-    transform: rotateY(180deg);
-  }
-  .card:hover .card_side--back{
+  .card:hover .card_side--front {
     transform: rotateY(0deg);
   }
-  .card_side--back{
+  .card:hover .card_side--back {
     transform: rotateY(-180deg);
+  }
+  .card_side--back {
+    transform: rotateY(-180deg);
+    display: none;
+  }
+  .card_side--front {
     background-color: white;
-  }
-  .card_side--front{
-    background-color:white;
-    color: rgb(255,90,9);
+    color: rgb(255, 90, 9);
     font-size: 3rem;
-    font-family: 'Cinzel', serif;
+    font-family: "Cinzel", serif;
   }
-  
-  .card_cta{
+
+  .card_cta {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -549,314 +679,181 @@ html {
     width: 90%;
     text-align: center;
   }
-  .card_price-box{
+  .card_price-box {
     text-align: center;
     margin-bottom: 8rem;
     color: #393939;
   }
-  .card_price-only{
+  .card_price-only {
     font-size: 1.7rem;
     text-transform: uppercase;
-    color: rgb(255,90,9);
-    font-family: 'Cinzel', serif;
+    color: rgb(255, 90, 9);
+    font-family: "Cinzel", serif;
   }
-  .card_price-value{
+  .card_price-value {
     font-size: 6rem;
     font-weight: 100;
   }
-  @media screen and (max-width:600px){
-    .food{
-      height: 150vh;
-      margin: 10rem auto;
-      text-align: center;
-    }
-    .header-food{
-      font-size: 4rem;
-      color: rgba(255,90,9, .7);
-      font-family: 'Cinzel', serif;
-      font-style: italic;
-    }
-    .food-row{
-      display: flex;
-      width: 100vw;
-      flex-direction: column;
-      height: 130vh;
-      justify-content: space-around;
-    }
-    .col-1-of-3{
-      width: 100vw;
-      height: 40vh;
-    }
-    .card{
-      height: 40vh;
-      width: 100vw;
-      perspective: 150rem; /*Gives 3d feel to object */
-      -moz-perspective:150rem;
-      
-    }
-    .card_picture_video{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      opacity: 1;
-      z-index: 1;
-      position: relative;
-    }
-    .overlay{
-      z-index: 2;
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      background-color: #ec7f37;
-      opacity: 0.5;
-    }
-    .overlay-2{
-      z-index: 2;
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      background-color: #ec7f37;
-      opacity: 0.5;
-    }
-    .overlay-3{
-      z-index: 2;
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      background-color: #ec7f37;
-      opacity: 0.5;
-    }
-    .card-video{
-      width: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    .card_side{
-      
-      height: 40vh;
-      transition: 1s ease;
-      color: black;
-      font-size: 2rem;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      backface-visibility: hidden;
-      border-radius: 4px;
-      overflow: hidden;
-      box-shadow: 0 1.5rem 4rem rgba(0,0,0,.15);
-    }
-    .card:hover .card_side--front{
-      transform: rotateY(0deg);
-    }
-    .card:hover .card_side--back{
-      transform: rotateY(-180deg);
-    }
-    .card_side--back{
-      transform: rotateY(-180deg);
-      display: none;
-    }
-    .card_side--front{
-      background-color:white;
-      color: rgb(255,90,9);
-      font-size: 3rem;
-      font-family: 'Cinzel', serif;
-    }
-    
-    .card_cta{
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 90%;
-      text-align: center;
-    }
-    .card_price-box{
-      text-align: center;
-      margin-bottom: 8rem;
-      color: #393939;
-    }
-    .card_price-only{
-      font-size: 1.7rem;
-      text-transform: uppercase;
-      color: rgb(255,90,9);
-      font-family: 'Cinzel', serif;
-    }
-    .card_price-value{
-      font-size: 6rem;
-      font-weight: 100;
-    }
-  }
-  .menu{
-    height: 95vh;
-    max-width: 100vw;
+}
+.menu {
+  height: 95vh;
+  max-width: 100vw;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(255, 90, 9, 0.5),
+      rgba(255, 90, 9, 0.5)
+    ),
+    url(img/food-20.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+.col-1-of-4 {
+  width: 25vw;
+}
+.col-2-of-4 {
+  width: 40vw;
+}
+.menu-splash-image {
+  width: 100%;
+  transition: 0.3s;
+}
+.menu-splash-image:hover {
+  transform: scale(1.3) translateX(10%);
+}
+.menu-image {
+  width: 100%;
+  transition: 0.3s;
+}
+.menu-image:hover {
+  transform: scale(1.8);
+}
+.food-gallery {
+  display: flex;
+  flex-direction: column;
+  max-height: 95vh;
+}
+.food-gallery-row-1 {
+  width: 25vw;
+  display: flex;
+}
+.food-gallery-row-2 {
+  width: 25vw;
+  display: flex;
+}
+.gallery-image {
+  width: 33.333%;
+  max-height: 30vh;
+  transition: 0.3s;
+}
+.gallery-image-2 {
+  width: 50%;
+  max-height: 30vh;
+  transition: 0.3s;
+}
+.menu-header {
+  font-size: 4rem;
+  color: white;
+  font-family: "Cinzel", serif;
+  text-align: center;
+  text-transform: uppercase;
+  font-style: italic;
+}
+.gallery-image:hover {
+  transform: scale(1.3);
+}
+.gallery-image-2:hover {
+  transform: scale(1.1);
+}
+@media screen and (max-width: 600px) {
+  .menu {
+    height: 120vh;
     background-image: linear-gradient(
-      to right bottom, 
-      rgba(255,90,9, 0.5) , 
-      rgba(255,90,9, 0.5)) , url(img/food-20.jpg);
-      background-size:cover;
-      background-position: center; 
-      background-attachment: fixed;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    
+        to right bottom,
+        rgba(255, 90, 9, 0.5),
+        rgba(255, 90, 9, 0.5)
+      ),
+      url(img/food-20.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
-  .menu-row{
+  .menu-row {
     display: flex;
     width: 100%;
+    flex-direction: column;
     justify-content: space-around;
     align-items: flex-end;
   }
-  .col-1-of-4{
-    width: 25vw;
+  .col-1-of-4 {
+    width: 100vw;
   }
-  .col-2-of-4{
-    width: 40vw;
+  .col-2-of-4 {
+    width: 100vw;
   }
-  .menu-splash-image{
+  .menu-splash-image {
     width: 100%;
-    transition: .3s;
+    transition: 0.3s;
   }
-  .menu-splash-image:hover{
-    transform: scale(1.3) translateX(10%)
-;  }
-  .menu-image{
+  .menu-splash-image:hover {
+    transform: scale(1) translateX(0);
+  }
+  .menu-image {
     width: 100%;
-    transition: .3s;
+    transition: 0.3s;
   }
-  .menu-image:hover{
-    transform: scale(1.8);
+  .menu-image:hover {
+    transform: scale(1);
   }
-  .food-gallery{
+  .food-gallery {
     display: flex;
     flex-direction: column;
-    max-height: 95vh;
   }
-  .food-gallery-row-1{
-    width: 25vw;
-    display: flex;
-
-  }
-  .food-gallery-row-2{
-    width: 25vw;
+  .food-gallery-row-1 {
+    width: 100vw;
     display: flex;
   }
-  .gallery-image{
-    width: 33.333%;
-    max-height: 30vh;
-    transition: .3s;
+  .food-gallery-row-2 {
+    width: 100vw;
+    display: flex;
   }
-  .gallery-image-2{
+  .gallery-image {
+    width: 100vw;
+    transition: 0.3s;
+  }
+  .gallery-image-2 {
     width: 50%;
-    max-height: 30vh;
-    transition: .3s;
+    transition: 0.3s;
   }
-  .menu-header{
+  .menu-header {
     font-size: 4rem;
     color: white;
-    font-family: 'Cinzel', serif;
+    font-family: "Cinzel", serif;
     text-align: center;
     text-transform: uppercase;
     font-style: italic;
+    width: 100vw;
   }
-  .gallery-image:hover{
-    transform: scale(1.3);
-    
+  .gallery-image:hover {
+    transform: scale(1);
   }
-  .gallery-image-2:hover{
-    transform: scale(1.1);
-    
+  .gallery-image-2:hover {
+    transform: scale(1);
   }
-  @media screen and (max-width:600px){
-    .menu{
-      height: 120vh;
-      background-image: linear-gradient(
-        to right bottom, 
-        rgba(255,90,9, 0.5) , 
-        rgba(255,90,9, 0.5)) , url(img/food-20.jpg);
-        background-size:cover;
-        background-position: center; 
-        background-attachment: fixed;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      
-    }
-    .menu-row{
-      display: flex;
-      width: 100%;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: flex-end;
-    }
-    .col-1-of-4{
-      width: 100vw;
-    }
-    .col-2-of-4{
-      width: 100vw;
-    }
-    .menu-splash-image{
-      width: 100%;
-      transition: .3s;
-    }
-    .menu-splash-image:hover{
-      transform: scale(1) translateX(0)
-  ;  }
-    .menu-image{
-      width: 100%;
-      transition: .3s;
-    }
-    .menu-image:hover{
-      transform: scale(1);
-    }
-    .food-gallery{
-      display: flex;
-      flex-direction: column;
-    }
-    .food-gallery-row-1{
-      width: 100vw;
-      display: flex;
-  
-    }
-    .food-gallery-row-2{
-      width: 100vw;
-      display: flex;
-    }
-    .gallery-image{
-      width: 100vw;
-      transition: .3s;
-    }
-    .gallery-image-2{
-      width: 50%;
-      transition: .3s;
-    }
-    .menu-header{
-      font-size: 4rem;
-      color: white;
-      font-family: 'Cinzel', serif;
-      text-align: center;
-      text-transform: uppercase;
-      font-style: italic;
-      width: 100vw;
-    }
-    .gallery-image:hover{
-      transform: scale(1);
-      
-    }
-    .gallery-image-2:hover{
-      transform: scale(1);
-      
-    }
-    .gallery-image-off{
-      display: none;
-    }
+  .gallery-image-off {
+    display: none;
   }
+}
