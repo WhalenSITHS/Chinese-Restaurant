@@ -360,7 +360,7 @@ html {
 .location {
 }
 .location-image {
-  width: 22vw;
+  /* width: 22vw; */
   border-radius: 5%;
   transition: 0.3s;
 }
